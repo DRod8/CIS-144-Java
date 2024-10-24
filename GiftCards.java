@@ -11,9 +11,9 @@ public class GiftCards
     String myDateFormat = "MM/dd/yyyy";
     SimpleDateFormat dtToday = new SimpleDateFormat(myDateFormat);
 
-    // YExpiration Date YEAR
+    // Expiration Date - YEAR
     Date myDate2 = new Date();
-    String myDateFormat2 = "yyyy";
+    String myDateFormat2 = "MM/yyyy";
     SimpleDateFormat dtYear = new SimpleDateFormat(myDateFormat2);
 
     // define the class data members
@@ -42,6 +42,7 @@ public class GiftCards
         System.out.println(" Card Holder: " + holder);
         System.out.println(" Card Number: " + cardNum);
         System.out.println(" Card Amount: " + nf.format(balance));
+        System.out.println(" Expires: " + dtYear.format(myDate2));
     }
     public double getBalance()
     {
@@ -67,6 +68,5 @@ public class GiftCards
         System.out.println(" Deducted: " + nf.format(spend));
         balance -= spend;
         System.out.println(" Card Balance: " + nf.format(balance));
-        System.out.println(" Expires: " + dtYear.format(myDate2));
     }
 }
