@@ -1,6 +1,5 @@
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 // Dan Rodriguez, Programmer
@@ -68,13 +67,6 @@ public class GiftCards
         System.out.println(" Deducted: " + nf.format(spend));
         balance -= spend;
         System.out.println(" Card Balance: " + nf.format(balance));
-
-        //EXPIRATION DATE
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(myDate2);
-        calendar.add(Calendar.YEAR, 1);  // Adding validity period in months
-        expirationDate = calendar.getTime();
-
         System.out.println(" Expires: " + dtYear.format(myDate2));
     }
 }
