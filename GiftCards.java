@@ -13,7 +13,7 @@ public class GiftCards
 
     // Expiration Date - YEAR
     Date myDate2 = new Date();
-    String myDateFormat2 = "MM/yyyy";
+    String myDateFormat2 = "yyyy";
     SimpleDateFormat dtYear = new SimpleDateFormat(myDateFormat2);
 
     // define the class data members
