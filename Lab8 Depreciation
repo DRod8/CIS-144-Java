@@ -1,0 +1,82 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class SumOfYearsDepreciation
+{
+    // the global variables are declared
+    static double assetCost = 0;
+    static double salvageValue = 0;
+    static double depreciableAmount = 0;
+    static int assetLife = 0;
+
+    // declare a Scanner class object
+    static Scanner sc = new Scanner(System.in);
+    // declare a DecimalFormat class object
+    static DecimalFormat two = new DecimalFormat("0.00");
+
+    // method to receive asset information
+    public static void AssetInfo()
+    {
+        // declare and initialize a variable
+        String assetType = "";
+
+        // display output block information
+        System.out.println("[[ Asset Information ]]");
+        // request, receive and echo the asset type
+        System.out.println("please input the asset type");
+        assetType = sc.nextLine();
+        System.out.println("Asset Type: " + assetType);
+
+        // request, receive, echo the asset cost, salvage value
+        System.out.println("please input the asset cost");
+        assetCost = sc.nextDouble();
+        System.out.println("Asset Cost: " +
+                two.format(assetCost));
+        System.out.println("please input the salvage value");
+        salvageValue = sc.nextDouble();
+        System.out.println("Salvage Value: " +
+                two.format(salvageValue));
+        // compute, echo depreciable amount as (cost - salvage)
+        depreciableAmount = assetCost - salvageValue;
+        System.out.println("Depreciable Amount: " +
+                two.format(depreciableAmount));
+        // request, receive and echo the asset life
+        System.out.println("please input the asset life");
+        assetLife = sc.nextInt();
+        System.out.println("Asset Life: " + assetLife);
+    }
+    // method to sum the years
+    public static int GaussSum(int num)
+    {
+        // declare and initialize a variable
+        int sumOfYears = 0;
+        // use Gauss Formula to sum the years
+        sumOfYears = num * (num + 1) / 2;
+        // echo the sum of years
+        System.out.println("sum of years: " + sumOfYears);
+        // return the sum
+        return sumOfYears;
+    }
+
+    public static void main(String[] args)
+    {
+        // declare and initialize the local variable(s)
+        String userName = "";
+
+        // display output block information
+        System.out.println("<< Sum of Years Digits Program >>");
+        // meet and greet the program user
+        System.out.println("please enter your name: ");
+        userName = sc.nextLine();
+        System.out.println("welcome: " + userName + "\n");
+
+        // call the AssetInfo() method
+        AssetInfo();
+        // call the GaussSum() method
+        GaussSum(assetLife);
+
+        // call the ShowDepreciationSchedule() method
+
+        // call the CheckDepreciation() method
+    }
+}
